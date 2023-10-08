@@ -1,0 +1,44 @@
+<section class="w-75 mx-auto shadow bg-light-main rounded p-3 my-5">
+    <h3 class="text-center fw-bold label-color my-3"> Check Out</h3>
+    <form [formGroup]="orderForm" (ngSubmit)="handleForm()">
+        <div class="form-item p-2 my-2">
+            <label class="label-color p-2" for="details">Details:</label>
+            <input formControlName="details" type="text" id="details" placeholder="Enter your details...."
+                class="w-100 form-control">
+
+            <div class="my-2"
+                *ngIf="orderForm.get('details')?.errors && (orderForm.get('details')?.touched || orderForm.get('details')?.value.length > 0)"
+                class="alert alert-danger mt-2 p-2">
+                <p class="  text-center mt-2" *ngIf="orderForm.get('details')?.getError('required')">Details is Required
+                </p>
+            </div>
+        </div>
+        <div class="form-item p-2 my-2">
+            <label class="label-color p-2" for="phone">Phone:</label>
+            <input formControlName="phone" type="tel" id="phone" placeholder="Enter your phone...."
+                class="w-100 form-control">
+
+            <div class="my-2"
+                *ngIf="orderForm.get('phone')?.errors && (orderForm.get('phone')?.touched || orderForm.get('phone')?.value.length > 0)"
+                class="alert alert-danger mt-2 p-2">
+                <p class="  text-center mt-2" *ngIf="orderForm.get('phone')?.getError('required')">Phone is Required</p>
+                <p class="  text-center mt-2" *ngIf="orderForm.get('phone')?.getError('pattern')">Phone must egyptian
+                    number</p>
+            </div>
+        </div>
+        <div class="form-item p-2 my-2">
+            <label class="label-color p-2" for="city">City:</label>
+            <input formControlName="city" type="tect" id="city" placeholder="Enter your City...."
+                class="w-100 form-control">
+
+            <div class="my-2"
+                *ngIf="orderForm.get('city')?.errors && (orderForm.get('city')?.touched || orderForm.get('city')?.value.length > 0)"
+                class="alert alert-danger mt-2 p-2">
+                <p class="  text-center mt-2" *ngIf="orderForm.get('city')?.getError('required')">city is Required</p>
+            </div>
+        </div>
+
+
+        <button class="main-btn my-3 w-75 d-block mx-auto"> Pay Now</button>
+    </form>
+</section>

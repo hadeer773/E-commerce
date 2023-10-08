@@ -1,0 +1,22 @@
+
+
+.mycard{
+    transition-property: box-shadow;
+    transition-duration: 0.5s;
+    height: 500px;
+    &:hover{
+        box-shadow: 0 0 20px #fd865c;
+    }
+.img{
+    height: 400px;
+    img{
+        width: 100%;
+        height: 100%;
+    }
+}
+
+
+    .category-details{
+        min-height: 100px;
+    }
+}

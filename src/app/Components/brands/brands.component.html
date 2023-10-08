@@ -1,0 +1,57 @@
+<section class="my-3 bg-light-main">
+    <div class="container py-2 my-2">
+        <h1 class="text-main text-center fw-bold my-2">All Brands</h1>
+
+
+
+        <div class="row justify-content-center g-4">
+            <div *ngFor="let brand of brandsData" class="col-sm-12 col-md-3 " (click)="openBrand(brand._id)"
+                data-bs-toggle="modal" data-bs-target="#brandModel">
+                <div class="rounded w-100 mycard position-relative border border-black ">
+                    <div role="button">
+                        <div class="img">
+                            <img class="w-100 " [src]="brand.image" alt="img brand">
+                        </div>
+                        <div class="brand-details p-1">
+                            <h4 class="text-main h3 text-center fw-bold">{{brand.name}}</h4>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <!-- Modal -->
+        <div class="modal fade " id="brandModel" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog ">
+
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-2 fw-medium p-0 m-0" id="exampleModalLabel"><span
+                                class="text-main fs-1 fw-bold">B</span>rand</h1>
+                        <button (click)="closeBrand()" type="button" class="btn-close main-btn" data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="d-flex justify-content-between align-items-center p-3">
+                            <div>
+                                <h4 class="fw-bold text-main fs-2">{{specificBrand.name}}</h4>
+                                <h5>{{specificBrand.name}}</h5>
+                            </div>
+                            <div>
+                                <img [src]="specificBrand.image" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button (click)="closeBrand()" type="button" class=" main-btn"
+                            data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

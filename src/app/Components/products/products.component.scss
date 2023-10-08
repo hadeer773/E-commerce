@@ -1,0 +1,34 @@
+input{
+    &:focus{
+        box-shadow: 0 0 10px #fd865c !important;
+        border: 1px solid #f34100;
+    }
+}
+
+
+
+.mycard{
+    transition-property: box-shadow;
+    transition-duration: 0.5s;
+    &:hover{
+        box-shadow: 0 0 20px #fd865c;
+    }
+}
+
+
+.product{
+
+    overflow: hidden;
+
+    &:hover{
+        .main-btn{
+            transform: translatey(0);
+        }
+    }
+
+    .main-btn{
+        transform: translateY(250%);
+        transition-duration: 0.3s;
+    }
+
+}

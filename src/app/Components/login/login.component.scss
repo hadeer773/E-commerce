@@ -1,0 +1,19 @@
+
+.label-color{
+color: #fd7e14;
+}
+
+
+
+input{
+    &:focus{box-shadow: 0 0 10px #fd865c !important;}
+
+}
+p{
+    transition-property: color;
+    transition-duration: 0.3s;
+    cursor: pointer;
+&:hover{
+color: #fd865c;
+}
+}
